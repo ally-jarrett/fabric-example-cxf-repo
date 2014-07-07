@@ -1,0 +1,24 @@
+<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:xs="http://www.w3.org/2001/XMLSchema"><grammars><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified">
+    <xs:element name="Customer" type="customer"/>
+    <xs:element name="Order" type="order"/>
+    <xs:element name="Product" type="product"/>
+    <xs:complexType name="customer">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element minOccurs="0" name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="product">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="description" type="xs:string"/>
+            <xs:element name="id" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="order">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="description" type="xs:string"/>
+            <xs:element name="id" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+</grammars><resources base="http://localhost/cxf/"><resource path="/customerservice/"><resource path="customers/"><method name="POST"><request><representation mediaType="application/xml"/><representation mediaType="application/json"/></request><response><representation mediaType="application/octet-stream"/></response></method><method name="PUT"><request><representation mediaType="application/xml"/><representation mediaType="application/json"/></request><response><representation mediaType="application/octet-stream"/></response></method></resource><resource path="customers/{id}/"><param name="id" style="template" type="xs:string"/><method name="DELETE"><request></request><response><representation mediaType="application/octet-stream"/></response></method><method name="GET"><request></request><response><representation mediaType="application/xml"/></response></method></resource><resource path="/orders/{orderId}/"><param name="orderId" style="template" type="xs:string"/><method name="GET"><response><representation mediaType="application/xml"/></response></method><resource path="/products/{productId}/"><param name="productId" style="template" type="xs:int"/><method name="GET"><request></request><response><representation mediaType="application/xml"/></response></method></resource></resource></resource></resources></application>

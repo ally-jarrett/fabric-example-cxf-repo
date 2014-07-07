@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features name="fabric8-cxf-features" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
+
+	<repository>mvn:org.apache.cxf.karaf/apache-cxf/${cxf-version}/xml/features</repository>
+	
+	<feature version="${project.version}" name="fabric8-cxf-rest-simple">
+		<feature>swagger</feature>
+		<feature>cxf-jaxrs</feature>
+		<bundle>mvn:org.fabric8.demo/fabric8-cxf-rest-simple/${project.version}</bundle>
+	</feature>
+	
+</features>
